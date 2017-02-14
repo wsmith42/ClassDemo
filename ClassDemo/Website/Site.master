@@ -98,10 +98,14 @@
                                 <asp:MenuItem Text="BootStrap Tabs"
                                      NavigateUrl="~/SamplePages/BootStrapTabs.aspx">
                                 </asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Maintenance" Value="Maintenance">
                                <asp:MenuItem Text="CRUD Review"
                                      NavigateUrl="~/SamplePages/CRUDReview.aspx">
                                 </asp:MenuItem>
-                              
+                              <asp:MenuItem Text="User/Role Admin"
+                                     NavigateUrl="~/Admin/Security/UserRoleAdmin.aspx">
+                                </asp:MenuItem>
                             </asp:MenuItem>
 
                             <asp:MenuItem Text="About" NavigateUrl="~/About.aspx"></asp:MenuItem>

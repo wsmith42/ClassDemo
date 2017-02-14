@@ -16,6 +16,7 @@ namespace Chinook.Data.Enitities
     {
         [Key]
         public int AlbumId { get; set; }
+
         [Required(ErrorMessage ="Title is required.")]
         [StringLength(160,ErrorMessage ="Title exceeds maximun length of 160 characters")]
         public string Title { get; set; }

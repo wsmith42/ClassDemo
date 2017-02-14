@@ -16,19 +16,23 @@ namespace Chinook.Data.Enitities
     {
         [Key]
         public int TrackId { get; set; }
-        [StringLength(200, ErrorMessage = "Name is limited to 200 characters")]
-        [Required(ErrorMessage = "Name is required.")]
+
+        [Required(ErrorMessage ="Name is a required field.")]
+        [StringLength(200,ErrorMessage ="Name is limited to 200 characters.")]
         public string Name { get; set; }
         public int? AlbumId { get; set; }
         public int MediaTypeId { get; set; }
         public int? GenreId { get; set; }
-        [StringLength(220, ErrorMessage = "Composer is limited to 220 characters")]
+
+        [StringLength(220,ErrorMessage ="Composer is limited to 220 characters.")]
         public string Composer { get; set; }
-        [Required(ErrorMessage ="Milliseconds is a required field")]
-        [Range(1.0, double.MaxValue, ErrorMessage ="Value out of range. must be greater than zero")]
+
+        [Required(ErrorMessage ="Milliseconds is a required filed")]
+        [Range(1.0,double.MaxValue,ErrorMessage ="Millisecond value out of range; must be greater that 0.")]
         public int Milliseconds { get; set; }
         public int? Bytes { get; set; }
-        [Range(0.00, double.MaxValue, ErrorMessage = "UnitPrice out of range. must be greater than zero")]
+        [Required(ErrorMessage = "Unit Price is a required filed")]
+        [Range(0.00, double.MaxValue, ErrorMessage = "Unit Price value out of range; must be 0 or greater.")]
         public decimal UnitPrice { get; set; }
 
         //Navigation properties
