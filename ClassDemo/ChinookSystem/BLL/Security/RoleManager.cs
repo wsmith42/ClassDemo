@@ -33,21 +33,21 @@ namespace ChinookSystem.BLL.Security
                 }
             }
         }
-        public void AddStartupRoles()
-        {
-            foreach (var roleName in SecurityRoles.DefaultSecurityRoles)
-            {
-                //Roles accesses all the records on the AspNetRoles table
-                //Name is the role (WebsiteAdmins)
-                if (!Roles.Any(r => r.Name.Equals(roleName)))
-                {
-                    //create a new instance that will be used as the data to 
-                    //   add a new record to the AspNetRoles table
-                    //add role name to the instance
-                    this.Create(new IdentityRole(roleName));
-                }
-            }
-        }
+        //public void AddStartupRoles()
+        //{
+        //    foreach (var roleName in SecurityRoles.DefaultSecurityRoles)
+        //    {
+        //        //Roles accesses all the records on the AspNetRoles table
+        //        //Name is the role (WebsiteAdmins)
+        //        if (!Roles.Any(r => r.Name.Equals(roleName)))
+        //        {
+        //            //create a new instance that will be used as the data to 
+        //            //   add a new record to the AspNetRoles table
+        //            //add role name to the instance
+        //            this.Create(new IdentityRole(roleName));
+        //        }
+        //    }
+        //}
 
         #region UserRole Administration
         [DataObjectMethod(DataObjectMethodType.Select,false)]

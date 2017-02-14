@@ -17,7 +17,7 @@
         //when the application starts up
 
         var RoleManager = new RoleManager();
-        RoleManager.AddStartupRoles();
+        RoleManager.AddDefaultRoles();
 
         var UserManager = new UserManager();
         UserManager.AddWebMaster();
