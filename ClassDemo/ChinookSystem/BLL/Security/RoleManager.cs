@@ -20,8 +20,19 @@ namespace ChinookSystem.BLL.Security
     {
         public RoleManager() : base(new RoleStore<IdentityRole>(new ApplicationDbContext()))
         {
-        }
 
+        }
+        public void AddDefaultRoles()
+        {
+            foreach (string roleName in SecurityRoles.DefaultSecurityRoles)
+            {
+                // Check if it exists
+                if (!Roles.Any(r => r.Name == roleName))
+                {
+                    this.Create(new IdentityRole(roleName));
+                }
+            }
+        }
         public void AddStartupRoles()
         {
             foreach (var roleName in SecurityRoles.DefaultSecurityRoles)

@@ -15,6 +15,7 @@ namespace ChinookSystem.DAL.Security
     {
         public ApplicationDbContext() : base("DefaultConnection")
         {
+
         }
     }
 }

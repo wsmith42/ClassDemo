@@ -27,7 +27,7 @@ namespace ChinookSystem.BLL.Security
         #region Constants
         private const string STR_DEFAULT_PASSWORD = "Pa$$word1";
         /// <summary>Requires first intial of FirstName and LastName</summary>
-        private const string STR_USERNAME_FORMAT = "{0}.{1}";
+        private const string STR_USERNAME_FORMAT = "{0} {1}";
         /// <summary>Requires UserName</summary>
         private const string STR_EMAIL_FORMAT = "{0}@Chinook.ca";
         private const string STR_WEBMASTER_USERNAME = "Webmaster";
@@ -37,7 +37,7 @@ namespace ChinookSystem.BLL.Security
         public void AddWebMaster()
         {
             //Users accesses all the records on the AspNetUsers table
-            //UserName is the user logon user id (dwelch)
+            //UserName is the user logon user id (wsmith42)
             if(!Users.Any(u => u.UserName.Equals(STR_WEBMASTER_USERNAME)))
             {
                 //create a new instance that will be used as the data to 
@@ -52,7 +52,7 @@ namespace ChinookSystem.BLL.Security
                 //place the webmaster account on the AspNetUsers table with a password
                 this.Create(webMasterAccount, STR_DEFAULT_PASSWORD);
                 //place an account role record on the AspNetUserRoles table
-                //.Id comes from AspNetUsers table and is the user's sql table pkey
+                //.Id comes from comes from the webmasteraccount and is the pkey of the account
                 //role comes from one of the Entities.Security.SecurityRoles
                 this.AddToRole(webMasterAccount.Id, SecurityRoles.WebsiteAdmins);
             }
