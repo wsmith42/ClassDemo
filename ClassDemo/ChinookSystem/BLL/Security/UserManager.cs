@@ -94,7 +94,7 @@ namespace ChinookSystem.BLL.Security
                     //does the employee NOT have a logon (no Users record)
                     if (!UserEmployees.Any(ue => ue.EmployeeId == employee.EmployeeId))
                     {
-                        //suggested new employee UserName (intitial firstname and lastname : dwelch)
+                        //suggested new employee UserName (intitial firstname and lastname : wsmith)
                         var newUserName = employee.FirstName.Substring(0, 1) + employee.LastName;
 
                         //create new Users instance
@@ -141,13 +141,14 @@ namespace ChinookSystem.BLL.Security
             //will be the verified unique UserName
             var verifiedUserName = suggestedUserName;
 
-            //The following for() loop will current to loop until
+            //The following for() loop will continue to loop until
             //a unused UserName has been generated.
             //The condition searches all current UserNames for the
             //currently suggested user name reqardless of case.
             //If found the loop will generated a new suggested user name
             //by adding one to the original suggested user name.
-            //This will continue until a new verified user name is found.
+            //This will continue until a un-used username is found.
+            // case does not matter - OrdinalIgnoreCase
             for (int i = 1; allUserNames.Any(x => x.Equals(verifiedUserName, StringComparison.OrdinalIgnoreCase)); i++)
             {
                 verifiedUserName = suggestedUserName + i.ToString();
