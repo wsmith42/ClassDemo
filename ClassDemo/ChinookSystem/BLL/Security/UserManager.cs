@@ -14,6 +14,7 @@ using ChinookSystem.DAL;
 using Chinook.Data.POCOs;
 using System.ComponentModel;
 using Chinook.Data.Enitities;
+using Chinook.System.DAL;
 #endregion
 
 namespace ChinookSystem.BLL.Security

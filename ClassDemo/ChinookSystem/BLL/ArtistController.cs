@@ -9,6 +9,7 @@ using Chinook.Data.Enitities;
 using Chinook.Data.POCOs;
 using ChinookSystem.DAL;
 using System.ComponentModel;
+using Chinook.System.DAL;
 #endregion
 
 namespace ChinookSystem.BLL
